@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/currencyConverterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/currencies"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/converterFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/from"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/currencyConverterTextView"
+        app:layout_constraintTop_toBottomOf="@id/currencyConverterTextView" />
+
+    <EditText
+        android:id="@+id/ngnAmount"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Text"
+        android:backgroundTint="@android:color/holo_purple"
+        android:fontFamily="sans-serif"
+        android:hint="@string/naira_ngn"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/converterFrom"
+        app:layout_constraintTop_toBottomOf="@id/converterFrom" />
+
+    <TextView
+        android:id="@+id/converterTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/to"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/ngnAmount"
+        app:layout_constraintTop_toBottomOf="@id/ngnAmount" />
+
+    <EditText
+        android:id="@+id/btcAmount"
+        android:layout_width="196dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Text"
+        android:backgroundTint="@android:color/holo_purple"
+        android:fontFamily="sans-serif"
+        android:hint="@string/bitcoin_btc"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/converterTo"
+        app:layout_constraintTop_toBottomOf="@id/converterTo" />
+
+    <Switch
+        android:id="@+id/roundUpSwitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:text="@string/round_up_currency"
+        android:thumbTint="@android:color/holo_purple"
+        android:trackTint="@android:color/holo_purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btcAmount" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/color"
+        android:text="@string/convert"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:padding="10dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConvert"
+        tools:text="Rate: %1$s NGN = %2$s BTC" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
